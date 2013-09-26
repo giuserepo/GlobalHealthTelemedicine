@@ -1,0 +1,45 @@
+<project name="Deploy tutti i progetti esb" basedir="." default="deploy.local">
+	<!-- Load properties -->
+	<property file="build.properties"/>
+	
+	<property name="build.dir" value="bin"/>
+	
+	<target name="deploy.local" description="Deploy to local webserver">
+		<!--echo>Cancellazione in corso sul webserver locale...</echo>
+		<delete>
+			<fileset dir="${deploy.dir.local}"/>
+		</delete-->
+		
+		<echo>Copia in corso sul webserver locale...</echo>
+		<copy todir="${deploy.dir.local}">
+			<fileset dir="${build.dir}"/>
+		</copy>		
+	</target>
+	
+	<!--target name="deploy.remote" description="Deploy via FTP">
+ 				
+ 		<ftp server="${deploy.dev.ftp.host}"
+			remotedir="${deploy.dev.ftp.basedir}"
+			userid="${deploy.dev.ftp.username}"
+			password="${deploy.dev.ftp.password}">
+			<fileset dir="${build.dir}"/>
+		</ftp>
+
+		<antcall target="clean"/>
+	</target-->	
+	<target name="deploy.ssh" description="Deploy via SSH">
+		<echo>Copia in corso sul webserver remoto...</echo>				
+		<scp remoteTodir="${ssh.user}@${ssh.server}:${ssh.target.dir}"
+			password="${ssh.password}"
+			trust="yes"
+			sftp="true">    
+		  <fileset dir="${build.dir}">      
+		  	<include name="**/*"/>    
+		  </fileset>
+		</scp>
+		
+		<!-- Clean up -->
+
+	</target>	
+	
+</project>

@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+
+<!-- the DOCTYPE means we are required to use html for a root element -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jstl/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:tf="http://jbpm.org/jsf/tf"
+      xmlns:jbpm="http://jbpm.org/jsf">
+
+  <ui:component>
+
+    <jbpm:dataform>
+  	
+      <f:facet name="header">
+        <h:outputText value="#{taskName}"/>
+      </f:facet>
+       <!-- TASKFORM ROWS -->
+      <!-- jbpm:datacell>
+        <f:facet name="header">
+            <h:outputText value="theBody"/>
+        </f:facet>
+        <h:inputTextarea value="#{var['theBody']}" rows="20" cols="50" />   
+      </jbpm:datacell-->
+      <jbpm:datacell>
+        <f:facet name="header">
+            <h:outputText value="Classe dell'incidente"/>
+        </f:facet>      
+		<h:selectOneMenu id="incidentClass" value="#{var['incidentClass']}" inlineStyle="width: 30px;">
+			<f:selectItem id="ic1" itemLabel="infrastruttura" itemValue="infrastruttura" />
+			<f:selectItem id="ic2" itemLabel="sicurezza" itemValue="sicurezza" />
+			<f:selectItem id="ic3" itemLabel="altro" itemValue="altro" />			
+		</h:selectOneMenu>
+      </jbpm:datacell>
+      <jbpm:datacell>
+        <f:facet name="header">
+            <h:outputText value="Gravita' dell'incidente (Priority)"/>
+        </f:facet>      
+		<h:selectOneMenu id="incidentSeverity" value="#{var['incidentSeverity']}" inlineStyle="width: 30px;">
+			<f:selectItem id="is1" itemLabel="low" itemValue="low" />
+			<f:selectItem id="is2" itemLabel="medium" itemValue="medium" />
+			<f:selectItem id="is3" itemLabel="hight" itemValue="hight" />			
+		</h:selectOneMenu>
+      </jbpm:datacell>
+      <jbpm:datacell>
+        <f:facet name="header">
+            <h:outputText value="Tipo di incidente (Issue Type)"/>
+        </f:facet>      
+		<h:selectOneMenu id="incidentType" value="#{var['incidentType']}" inlineStyle="width: 30px;">
+			<f:selectItem id="it1" itemLabel="SI Denial of Service" itemValue="SI Denial of Service" />
+			<f:selectItem id="it2" itemLabel="SI Inappropriate Use" itemValue="SI Inappropriate Use" />
+			<f:selectItem id="it3" itemLabel="SI Internet Emergency" itemValue="SI Internet Emergency" />
+			<f:selectItem id="it4" itemLabel="SI Malicious Code" itemValue="SI Malicious Code" />
+			<f:selectItem id="it5" itemLabel="SI Probes and Scans" itemValue="SI Probes and Scans" />
+			<f:selectItem id="it6" itemLabel="SI Trend Analysis" itemValue="SI Trend Analysis" />
+			<f:selectItem id="it7" itemLabel="SI Unauthorized Access" itemValue="SI Unauthorized Access" />
+		</h:selectOneMenu>
+      </jbpm:datacell> 
+      <jbpm:datacell>
+        <f:facet name="header">
+            <h:outputText value="Giorno della settimana e ora dell'incidente"/>
+        </f:facet>      
+		<h:selectOneMenu id="weekDay" value="#{var['weekDay']}" inlineStyle="width: 10px;">
+			<f:selectItem id="wd1" itemLabel="lunedi" itemValue="1" />
+			<f:selectItem id="wd2" itemLabel="martedi" itemValue="2" />
+			<f:selectItem id="wd3" itemLabel="mercoledi" itemValue="3" />
+			<f:selectItem id="wd4" itemLabel="giovedi" itemValue="4" />
+			<f:selectItem id="wd5" itemLabel="venerdi" itemValue="5" />
+			<f:selectItem id="wd6" itemLabel="sabato" itemValue="6" />
+			<f:selectItem id="wd7" itemLabel="domenica" itemValue="7" />
+		</h:selectOneMenu>
+		<h:selectOneMenu id="timeTable" value="#{var['timeTable']}" inlineStyle="width: 5px;">
+			<f:selectItem id="time1" itemLabel="8" itemValue="8" />
+			<f:selectItem id="time2" itemLabel="10" itemValue="10" />
+			<f:selectItem id="time3" itemLabel="12" itemValue="12" />
+			<f:selectItem id="time4" itemLabel="14" itemValue="14" />
+			<f:selectItem id="time5" itemLabel="16" itemValue="16" />
+			<f:selectItem id="time6" itemLabel="18" itemValue="18" />
+			<f:selectItem id="time7" itemLabel="20" itemValue="20" />
+		</h:selectOneMenu>
+      </jbpm:datacell>            
+      <jbpm:datacell>
+        <f:facet name="header">
+            <h:outputText value="Device Platform"/>
+        </f:facet>      
+		<h:selectOneMenu id="devicePlatform" value="#{var['devicePlatform']}" inlineStyle="width: 30px;">
+			<f:selectItem id="dp2" itemLabel="ISS Proventia A201" itemValue="ISS Proventia A201" />
+			<f:selectItem id="dp3" itemLabel="Cisco 4215" itemValue="Cisco 4215" />
+			<f:selectItem id="dp4" itemLabel="Other" itemValue="Other" />
+		</h:selectOneMenu>
+      </jbpm:datacell>      
+      <jbpm:datacell>
+        <f:facet name="header">
+            <h:outputText value="Device Operative System"/>
+        </f:facet>      
+		<h:selectOneMenu id="deviceOS" value="#{var['deviceOS']}" inlineStyle="width: 30px;">
+			<f:selectItem id="do1" itemLabel="Windows 7" itemValue="Windows 7" />
+			<f:selectItem id="do2" itemLabel="Red Hat 7.3" itemValue="Red Hat 7.3" />
+			<f:selectItem id="do3" itemLabel="Cisco IOS" itemValue="Cisco IOS" />
+			<f:selectItem id="do4" itemLabel="Other" itemValue="Other" />
+		</h:selectOneMenu>
+      </jbpm:datacell>
+      <jbpm:datacell>
+        <f:facet name="header">
+            <h:outputText value="Device IP"/>
+        </f:facet> 
+        <h:inputText id="deviceIP" value="#{var['deviceIP']}" size="50" />     
+      </jbpm:datacell>
+      
+      <!-- jbpm:datacell>
+        <f:facet name="header">
+            <h:outputText value="Tipo di Ticket (Ticket Type)"/>
+        </f:facet>      
+		<h:selectOneMenu id="TicketType" value="#{var['TicketType']}" inlineStyle="width: 30px;">
+			<f:selectItem id="tt1" itemLabel="Apertura" itemValue="IN" />
+			<f:selectItem id="tt2" itemLabel="Chiusura" itemValue="OUT" />
+		</h:selectOneMenu>
+      </jbpm:datacell-->
+      <jbpm:datacell>
+        <f:facet name="header">
+            <h:outputText value="Incident Room ID"/>
+        </f:facet>      
+		<h:selectOneMenu id="incidentAction" value="#{var['incidentAction']}" inlineStyle="width: 30px;">
+			<f:selectItem id="so1" itemLabel="Comitato di crisi n.1" itemValue="4"  />
+			<f:selectItem id="so2" itemLabel="Comitato di crisi n.2" itemValue="5" />
+			<f:selectItem id="so3" itemLabel="Comitato di crisi n.3" itemValue="6" />
+		</h:selectOneMenu>
+      </jbpm:datacell>                        	    
+      <jbpm:datacell>
+        <f:facet name="header">
+          <h:outputText value="Actions"/>
+        </f:facet>
+        <!-- TASKFORM BUTTONS -->
+        <tf:saveButton value="Salva"/>
+        <tf:cancelButton value="Annulla"/>
+        <tf:transitionButton value="Salva e chiudi"/>
+      </jbpm:datacell>
+	    
+    </jbpm:dataform>	
+    
+  </ui:component>
+
+</html>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<forms>
+  <form task="Inserisci i dati del SOC" form="SOC_Input.xhtml"/>
+  <form task="Verifica i dati del SOC" form="SOC_Verify.xhtml"/>
+</forms>

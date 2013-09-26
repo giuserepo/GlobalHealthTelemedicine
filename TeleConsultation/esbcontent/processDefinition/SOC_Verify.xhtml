@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+
+<!-- the DOCTYPE means we are required to use html for a root element -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jstl/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:tf="http://jbpm.org/jsf/tf"
+      xmlns:jbpm="http://jbpm.org/jsf">
+
+  <ui:component>
+
+    <jbpm:dataform>
+  	
+      <f:facet name="header">
+        <h:outputText value="#{taskName}"/>
+      </f:facet>
+       <!-- TASKFORM ROWS -->
+      <!-- jbpm:datacell>
+        <f:facet name="header">
+            <h:outputText value="theBody"/>
+        </f:facet>
+        <h:inputTextarea value="#{var['theBody']}" rows="20" cols="50" />   
+      </jbpm:datacell-->
+      <jbpm:datacell>
+        <f:facet name="header">
+            <h:outputText value="Gravita' dell'incidente (Incident Severity)"/>
+        </f:facet>      
+		<h:selectOneMenu id="incidentSeverity" value="#{var['incidentSeverityVer']}" inlineStyle="width: 30px;">
+			<f:selectItem id="is1" itemLabel="1" itemValue="1" />
+			<f:selectItem id="is2" itemLabel="2" itemValue="2" />
+			<f:selectItem id="is3" itemLabel="3" itemValue="3" />
+			<f:selectItem id="is4" itemLabel="4" itemValue="4" />
+			<f:selectItem id="is5" itemLabel="5" itemValue="5" />
+			<f:selectItem id="is6" itemLabel="6" itemValue="6" />
+			<f:selectItem id="is7" itemLabel="7" itemValue="7" />
+			<f:selectItem id="is8" itemLabel="8" itemValue="8" />
+			<f:selectItem id="is9" itemLabel="9" itemValue="9" />
+			<f:selectItem id="is10" itemLabel="10" itemValue="10" />
+			<f:selectItem id="is11" itemLabel="11" itemValue="11" />
+			<f:selectItem id="is12" itemLabel="12" itemValue="12" />
+			<f:selectItem id="is13" itemLabel="13" itemValue="13" />
+			<f:selectItem id="is14" itemLabel="14" itemValue="14" />
+			<f:selectItem id="is15" itemLabel="15" itemValue="15" />
+						
+		</h:selectOneMenu>
+      </jbpm:datacell>
+      <jbpm:datacell>
+        <f:facet name="header">
+            <h:outputText value="Tipo di icidente (Incident Type)"/>
+        </f:facet>      
+		<h:selectOneMenu id="incidentType" value="#{var['incidentTypeVer']}" inlineStyle="width: 30px;">
+			<f:selectItem id="it1" itemLabel="Windows" itemValue="Windows" />
+			<f:selectItem id="it2" itemLabel="Exchange" itemValue="Exchange" />
+			<f:selectItem id="it3" itemLabel="Linux" itemValue="Linux" />
+			<f:selectItem id="it4" itemLabel="Firewall" itemValue="Firewall" />
+			<f:selectItem id="it5" itemLabel="Proxy" itemValue="Proxy" />
+			<f:selectItem id="it6" itemLabel="Dominio" itemValue="Dominio" />
+		</h:selectOneMenu>
+      </jbpm:datacell> 
+      <jbpm:datacell>
+        <f:facet name="header">
+            <h:outputText value="Tipo di Ticket (Ticket Type)"/>
+        </f:facet>      
+		<h:selectOneMenu id="TicketType" value="#{var['TicketTypeVer']}" inlineStyle="width: 30px;">
+			<f:selectItem id="tt1" itemLabel="Apertura" itemValue="IN" />
+			<f:selectItem id="tt2" itemLabel="Chiusura" itemValue="OUT" />
+		</h:selectOneMenu>
+      </jbpm:datacell>                 	    
+      <jbpm:datacell>
+        <f:facet name="header">
+          <h:outputText value="Actions"/>
+        </f:facet>
+        <!-- TASKFORM BUTTONS -->
+        <tf:saveButton value="Salva"/>
+        <tf:cancelButton value="Annulla"/>
+        <tf:transitionButton value="Salva e chiudi"/>
+      </jbpm:datacell>
+	    
+    </jbpm:dataform>	
+    
+  </ui:component>
+
+</html>
