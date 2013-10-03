@@ -56,7 +56,7 @@
 		<description>
 			Analizza l'imput esterno applicando le regole di verifica, integrazione e trasformazione
 		</description>
-		<transition to="PreparaPerInvio"></transition>
+		<transition to="IndividuaDest"></transition>
 	</node>
 	<node name="EmailStarter">
 		<action class="org.jboss.soa.esb.services.jbpm.actionhandlers.EsbActionHandler"></action>
@@ -70,14 +70,6 @@
 		<transition to="InsDatiClin"></transition>
 	</task-node>
 
-	<node name="PreparaPerInvio">
-		<action class="org.jboss.soa.esb.services.jbpm.actionhandlers.EsbActionHandler"></action>
-		<description>
-			Verifica e prepara per l'invio
-		</description>
-		<transition to="ApplRegoleDiInvio"></transition>
-	</node>
-
 	<task-node name="InsDatiClin">
 		<description>
 			Inserisci dati clinici
@@ -89,13 +81,8 @@
 		<description>
 			Inserisci destinatario, quesito
 		</description>
-		<transition to="PreparaPerInvio"></transition>
+		<transition to="IndividuaDest"></transition>
 	</task-node>
-
-	<node name="ApplRegoleDiInvio">
-		<action class="org.jboss.soa.esb.services.jbpm.actionhandlers.EsbActionHandler"></action>
-		<transition to="NotificaQuesito"></transition>
-	</node>
 
 	<task-node name="VisQuesito">
 		<transition to="AnalisiQuesito"></transition>
@@ -142,6 +129,11 @@
 		<transition to="VisRisposta" name="Invio Locale"></transition>
 		<transition to="InvioRispEmail" name="Invio Email"></transition>
 		<transition to="RicRispostaIntegr" name="Invio Integrazione"></transition>
+	</node>
+
+	<node name="IndividuaDest">
+		<action></action>
+		<transition to="NotificaQuesito"></transition>
 	</node>
 
 	

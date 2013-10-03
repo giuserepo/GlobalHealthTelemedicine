@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<root-container name="TC_OrchProcess" width="698" height="914">
+<root-container name="TC_OrchProcess" width="698" height="842">
   <node name="Inizio" x="240" y="0" width="132" height="36">
     <edge>
       <label x="5" y="-10"/>
@@ -40,11 +40,6 @@
       <label x="5" y="-10"/>
     </edge>
   </node>
-  <node name="PreparaPerInvio" x="240" y="360" width="132" height="36">
-    <edge>
-      <label x="5" y="-10"/>
-    </edge>
-  </node>
   <node name="InsDatiClin" x="60" y="252" width="132" height="36">
     <edge>
       <label x="5" y="-10"/>
@@ -55,52 +50,47 @@
       <label x="5" y="-10"/>
     </edge>
   </node>
-  <node name="ApplRegoleDiInvio" x="240" y="420" width="132" height="36">
+  <node name="VisQuesito" x="240" y="468" width="132" height="36">
     <edge>
       <label x="5" y="-10"/>
     </edge>
   </node>
-  <node name="VisQuesito" x="240" y="540" width="132" height="36">
+  <node name="AnalisiQuesito" x="240" y="516" width="132" height="36">
     <edge>
       <label x="5" y="-10"/>
     </edge>
   </node>
-  <node name="AnalisiQuesito" x="240" y="588" width="132" height="36">
+  <node name="NotificaQuesito" x="240" y="408" width="132" height="36">
     <edge>
       <label x="5" y="-10"/>
     </edge>
   </node>
-  <node name="NotificaQuesito" x="240" y="480" width="132" height="36">
+  <node name="InvioRisposta" x="240" y="564" width="132" height="36">
     <edge>
       <label x="5" y="-10"/>
     </edge>
   </node>
-  <node name="InvioRisposta" x="240" y="636" width="132" height="36">
+  <node name="VisRisposta" x="48" y="708" width="132" height="36">
     <edge>
       <label x="5" y="-10"/>
     </edge>
   </node>
-  <node name="VisRisposta" x="48" y="780" width="132" height="36">
+  <node name="InvioRispEmail" x="432" y="684" width="132" height="36">
     <edge>
       <label x="5" y="-10"/>
     </edge>
   </node>
-  <node name="InvioRispEmail" x="432" y="756" width="132" height="36">
+  <node name="VerRicRisposta" x="432" y="744" width="132" height="36">
     <edge>
       <label x="5" y="-10"/>
     </edge>
   </node>
-  <node name="VerRicRisposta" x="432" y="816" width="132" height="36">
+  <node name="RicRispostaIntegr" x="240" y="720" width="132" height="36">
     <edge>
       <label x="5" y="-10"/>
     </edge>
   </node>
-  <node name="RicRispostaIntegr" x="240" y="792" width="132" height="36">
-    <edge>
-      <label x="5" y="-10"/>
-    </edge>
-  </node>
-  <node name="NotificaRisposta" x="240" y="696" width="132" height="36">
+  <node name="NotificaRisposta" x="240" y="624" width="132" height="36">
     <edge>
       <label x="5" y="-10"/>
     </edge>
@@ -111,7 +101,12 @@
       <label x="5" y="-10"/>
     </edge>
   </node>
-  <node name="Fine" x="240" y="876" width="132" height="36"/>
+  <node name="Fine" x="240" y="804" width="132" height="36"/>
+  <node name="IndividuaDest" x="240" y="348" width="132" height="36">
+    <edge>
+      <label x="5" y="-10"/>
+    </edge>
+  </node>
   <deployment graphicalInfoFile="/TeleConsultation/esbcontent/processDefinition/gpd.xml" imageFile="/TeleConsultation/esbcontent/processDefinition/processimage.jpg" serverName="localhost" serverPort="8080" serverDeployer="/jbpm-console/upload">
     <additionalFiles>
       <element value="/TeleConsultation/esbcontent/processDefinition/.gpd.wfprj_processdefinition.xml"/>
