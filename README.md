@@ -1,4 +1,4 @@
-GlobalHealthTC
+GlobalHealthTelemedicine
 ==============
 
-GlobalHealth Tele Consulto
+Repository dell'Associazione Global Health Telemedicine
